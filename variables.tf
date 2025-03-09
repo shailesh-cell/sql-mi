@@ -21,21 +21,20 @@ output "full_location" {
 }
 
 variable "environment" {
-  type  ."  = string
+  type    = string
   default = "dev"
   validation {
     condition     = contains(["dev", "uat", "prod"], var.environment)
-    error_message = "Allowed values: dev, uat, prod
+    error_message = "Allowed values: dev, uat, prod."
   }
 }
-
 
 variable "product" {
   type    = string
   default = "dbuh"
   validation {
-    condition     = contains(["dbuh", "ubuh", "pbuh"], var.environment)
-    error_message = "Allowed values: dbuh, ubuh, pbuh
+    condition     = contains(["dbuh", "ubuh", "pbuh"], var.product)
+    error_message = "Allowed values: dbuh, ubuh, pbuh."
   }
 }
 
@@ -57,7 +56,6 @@ variable "license_type" {
     error_message = "Allowed values: LicenseIncluded, BasePrice."
   }
 }
-
 
 # SQL Managed Instance Module (variables.tf)
 variable "sku_name" {
@@ -88,4 +86,3 @@ variable "vcores" {
   type    = number
   default = 2
 }
-
