@@ -15,6 +15,6 @@ module "subnet" {
 
 module "sql_mi" {
   source              = "./modules/sql_mi"
-  resource_group_name = module.resource_group.resource_group_name"
+  resource_group_name = module.resource_group.resource_group_name
   vnet_name           = module.vnet.vnet_name
 }
