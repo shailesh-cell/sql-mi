@@ -1,5 +1,5 @@
 # SQL Managed Instance Module (main.tf)
-resource "azurerm_sql_managed_instance" "sql_mi" {
+resource "azurerm_mssql_managed_instance" "sql_mi" {
   name                         = "${var.product}-${var.environment}-sql-${var.location}"
   location                     = var.location
   resource_group_name          = var.resource_group_name
