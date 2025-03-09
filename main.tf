@@ -4,6 +4,6 @@ module "resource_group" {
 
 module "vnet" {
   source      = "./modules/vnet"
-  vnet_name   = var.vnet_name
-  resource_group_name  = var.resource_group
+  vnet_name   = module.vnet.vnet_name
+  resource_group_name  = module.resource_group.rg_name
 }
