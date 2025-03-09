@@ -44,9 +44,6 @@ jobs:
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          
-      - name: Show Expanded Terraform Plan
-        run: terraform show -no-color tfplan
 
       - name: Upload Terraform Plan
         uses: actions/upload-artifact@v4
