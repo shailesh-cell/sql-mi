@@ -86,3 +86,8 @@ variable "vcores" {
   type    = number
   default = 2
 }
+
+variable "resource_group_name" {
+  type        = string
+  description = "Name of the resource group"
+}
