@@ -1,3 +1,3 @@
 output "sqlmi_name" {
-  value = azurerm_subnet.sql.mi.name
+  value = azurerm_mssql_managed_instance.sql.mi.name
 }

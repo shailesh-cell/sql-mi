@@ -5,7 +5,7 @@ resource "azurerm_mssql_managed_instance" "sql_mi" {
   resource_group_name          = var.resource_group_name
   administrator_login          = var.admin_username
   administrator_login_password = var.admin_password
-  subnet_id                    = var.subnet.id
+  subnet_id                    = var.subnet_id
   sku_name                     = var.sku_name
   storage_size_in_gb           = var.storage_size
   vcores                       = var.vcores
