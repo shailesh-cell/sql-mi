@@ -60,10 +60,10 @@ variable "license_type" {
 # SQL Managed Instance Module (variables.tf)
 variable "sku_name" {
   type    = string
-  default = "GP_Gen5_2"
+  default = "BC_Gen4"
   validation {
-    condition     = contains(["GP_Gen5_2", "GP_Gen5_4", "GP_Gen5_8"], var.sku_name)
-    error_message = "Allowed values: GP_Gen5_2, GP_Gen5_4, GP_Gen5_8."
+    condition     = contains(["BC_Gen4" "BC_Gen5" "BC_Gen8IH" "BC_Gen8IM" "GP_Gen4" "GP_Gen5" "GP_Gen8IH" "GP_Gen8IM"], var.sku_name)
+    error_message = "Allowed values: BC_Gen4, BC_Gen5, BC_Gen8IH, BC_Gen8IM, GP_Gen4, GP_Gen5, GP_Gen8IH, GP_Gen8IM."
   }
 }
 
@@ -84,7 +84,7 @@ variable "storage_size" {
 
 variable "vcores" {
   type    = number
-  default = 2
+  default = 4
 }
 
 variable "resource_group_name" {
