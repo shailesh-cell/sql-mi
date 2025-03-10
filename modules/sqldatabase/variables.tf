@@ -57,21 +57,6 @@ variable "sku_name_db" {
   }
 }
 
-variable "admin_username" {
-  type    = string
-  default = "sqladmin"
-}
-
-variable "admin_password" {
-  type    = string
-  default = "StrongP@ssword!"
-}
-
-variable "storage_size" {
-  type    = number
-  default = 32
-}
-
 variable "database_size" {
   type    = number
   default = 2
@@ -89,32 +74,6 @@ variable "vnet_name" {
 
 variable "subnet_id" {
   type        = string
-}
-
-variable "storage_account_type_map" {
-  description = "Storage account type based on environment"
-  type        = map(string)
-  default = {
-    "dev"  = "LRS"
-    "uat"  = "LRS"
-    "prod" = "GRS"
-  }
-}
-
-variable "timezone_id" {
-  description = "Timezone for Azure SQL Managed Instance"
-  type        = string
-  default     = "IST"
-
-  validation {
-    condition = contains(["UTC","UTC+12","IST"], var.timezone_id)
-    error_message = "Invalid Timezone. Choose a valid Azure SQL time zone."
-  }
-}
-
-variable "sql_mi" {
-   description = "Azure SQL Managed Instance"
-   type        = string
 }
 
 variable "mssql_server_id" {
