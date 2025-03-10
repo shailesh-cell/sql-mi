@@ -116,3 +116,8 @@ variable "sql_mi" {
    description = "Azure SQL Managed Instance"
    type        = string
 }
+
+variable "mssql_server_id" {
+  description = "The Azure Resource ID of the SQL Server"
+  type        = string
+}
