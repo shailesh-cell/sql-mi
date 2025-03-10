@@ -23,5 +23,5 @@ module "sql_mi" {
 }
 
 module "sqldatabase" {
-  source      = "./modules/saldatabase"
+  source      = "./modules/sqldatabase"
 }
