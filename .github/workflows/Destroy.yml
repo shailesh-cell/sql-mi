@@ -1,0 +1,53 @@
+name: Destroy Terraform Resources
+
+on:
+  workflow_dispatch:  # Allows manual execution from GitHub Actions UI
+
+permissions:
+  id-token: write
+  contents: read
+  actions: read
+
+jobs:
+  destroy-terraform-resources:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Log in to Azure with OIDC
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.ARM_CLIENT_ID }}
+          tenant-id: ${{ secrets.ARM_TENANT_ID }}
+          subscription-id: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+
+      - name: Set Up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.0  # Specify a stable version
+
+      - name: Terraform Init (for Destroy)
+        env:
+          ARM_USE_OIDC: true
+        run: |
+          set -e  # Exit immediately if any command fails
+          terraform init -input=false
+
+      - name: Terraform Plan (for Review)
+        env:
+          ARM_USE_OIDC: true
+        run: |
+          set -e
+          terraform plan -destroy -out=tfplan
+
+      - name: Terraform Destroy
+        env:
+          ARM_USE_OIDC: true
+          ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+          ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+          ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+        run: |
+          set -e
+          terraform apply -auto-approve tfplan

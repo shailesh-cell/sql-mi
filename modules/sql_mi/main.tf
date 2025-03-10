@@ -10,4 +10,5 @@ resource "azurerm_mssql_managed_instance" "sql_mi" {
   storage_size_in_gb           = var.storage_size
   vcores                       = var.vcores
   license_type                 = var.license_type
+  storage_account_type         = lookup(var.storage_account_type_map, var.environment, "Standard_LRS")
 }
