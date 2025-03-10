@@ -62,11 +62,6 @@ variable "database_size" {
   default = 2
 }
 
-variable "resource_group_name" {
-  type        = string
-  description = "Name of the resource group"
-}
-
 variable "mssql_server_id" {
   description = "The Azure Resource ID of the SQL Server"
   type        = string

@@ -24,6 +24,5 @@ module "sql_mi" {
 
 module "sqldatabase" {
   source      = "./modules/sqldatabase"
-  resource_group_name  = module.resource_group.rg_name
   mssql_server_id      = module.sql_mi.mssql_server_id
 }
