@@ -42,17 +42,6 @@ variable "resource_group_name" {
   type = string
 }
 
-variable "sku_name_aa" {
-  description = "App Service Plan SKU based on environment"
-  type        = string
-  default     = "Free"
-
-  validation {
-    condition     = contains(["Free", "Basic"], var.sku_name_aa)
-    error_message = "Invalid SKU. Allowed values: Free, Basic."
-  }
-}
-
 variable "vnet_name" {
   type        = string
   description = "Name of the Virtual Network"
