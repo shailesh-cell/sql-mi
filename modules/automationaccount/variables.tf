@@ -39,16 +39,10 @@ variable "product" {
 }
 
 variable "resource_group_name" {
-  type = string
+  type        = string
+  description = "Name of the resource group"
 }
 
 variable "sku_name_aa" {
-  description = "App Service Plan SKU based on environment"
   type        = string
-  default     = "Free"
-
-  validation {
-    condition     = contains(["Free", "Basic"], var.sku_name_aa)
-    error_message = "Invalid SKU. Allowed values: Free, Basic."
-  }
 }
