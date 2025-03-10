@@ -32,5 +32,5 @@ module "sqldatabase" {
 module "automationaccount" {
   source      = "./modules/automationaccount"
   resource_group_name  = module.resource_group.rg_name
-  sku_name_aa          = sku_name_aa = local.sku_name_aa
+  sku_name_aa          = local.sku_name_aa
 }
