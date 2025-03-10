@@ -24,4 +24,6 @@ module "sql_mi" {
 
 module "sqldatabase" {
   source      = "./modules/sqldatabase"
+  vnet_name   = module.vnet.vnet_name
+  subnet_id = module.subnet.subnet_id
 }
