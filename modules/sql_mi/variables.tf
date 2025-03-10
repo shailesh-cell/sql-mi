@@ -117,7 +117,7 @@ variable "timezone_id" {
   default     = "India Standard Time"
 
   validation {
-    condition = contains(["UTC","UTC+12",IST], var.timezone_id)
+    condition = contains(["UTC","UTC+12","IST"], var.timezone_id)
     error_message = "Invalid Timezone. Choose a valid Azure SQL time zone."
   }
 }
