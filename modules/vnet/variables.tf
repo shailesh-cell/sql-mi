@@ -52,3 +52,8 @@ variable "sku_name_aa" {
     error_message = "Invalid SKU. Allowed values: Free, Basic."
   }
 }
+
+variable "vnet_name" {
+  type        = string
+  description = "Name of the Virtual Network"
+}
