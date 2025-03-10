@@ -26,4 +26,5 @@ module "sqldatabase" {
   source      = "./modules/sqldatabase"
   vnet_name   = module.vnet.vnet_name
   subnet_id = module.subnet.subnet_id
+  resource_group_name  = module.resource_group.rg_name
 }
