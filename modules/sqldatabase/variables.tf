@@ -66,3 +66,13 @@ variable "mssql_server_id" {
   description = "The Azure Resource ID of the SQL Server"
   type        = string
 }
+
+variable "storage_account_type_map" {
+  description = "Storage account type based on environment"
+  type        = map(string)
+  default = {
+    "dev"  = "LRS"
+    "uat"  = "LRS"
+    "prod" = "GRS"
+  }
+}

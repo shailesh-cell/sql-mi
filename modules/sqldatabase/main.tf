@@ -5,4 +5,5 @@ resource "azurerm_mssql_database" "sql_database" {
   license_type                 = var.license_type
   max_size_gb                  = var.database_size
   sku_name                     = var.sku_name_db
+  storage_account_type         = lookup(var.storage_account_type_map, var.environment)
 }
