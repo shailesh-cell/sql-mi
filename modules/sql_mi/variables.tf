@@ -2,7 +2,7 @@ variable "location" {
   type    = string
   default = "cin"
   validation {
-    condition     = contains(["cin", "cus"], var.location)
+    condition     = contains(["cin", "cus"])
     error_message = "Allowed values: cin, cus."
   }
 }
