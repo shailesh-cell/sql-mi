@@ -111,7 +111,7 @@ variable "storage_account_type_map" {
   }
 }
 
-variable "sql_timezone" {
+variable "timezone_id" {
   description = "Timezone for Azure SQL Managed Instance"
   type        = string
   default     = "India Standard Time"
