@@ -73,6 +73,6 @@ variable "storage_account_type_map" {
   default = {
     "dev"  = "Local"
     "uat"  = "Local"
-    "prod" = "Geo", "Zone", "GeoZone"
+    "prod" = "Geo,Zone,GeoZone"
   }
 }
