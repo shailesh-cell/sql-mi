@@ -67,15 +67,6 @@ variable "resource_group_name" {
   description = "Name of the resource group"
 }
 
-variable "vnet_name" {
-  type        = string
-  description = "Name of the Virtual Network"
-}
-
-variable "subnet_id" {
-  type        = string
-}
-
 variable "mssql_server_id" {
   description = "The Azure Resource ID of the SQL Server"
   type        = string
