@@ -71,8 +71,8 @@ variable "storage_account_type_map" {
   description = "Storage account type based on environment"
   type        = map(string)
   default = {
-    "dev"  = ["Local"]
-    "uat"  = ["Local"]
-    "prod" = ["Geo", "Zone", "GeoZone"]
+    "dev"  = "Local"
+    "uat"  = "Local"
+    "prod" = "Geo", "Zone", "GeoZone"
   }
 }
