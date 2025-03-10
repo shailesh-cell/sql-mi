@@ -114,7 +114,7 @@ variable "storage_account_type_map" {
 variable "timezone_id" {
   description = "Timezone for Azure SQL Managed Instance"
   type        = string
-  default     = "India Standard Time"
+  default     = "IST"
 
   validation {
     condition = contains(["UTC","UTC+12","IST"], var.timezone_id)
