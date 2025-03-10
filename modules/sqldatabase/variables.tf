@@ -72,9 +72,9 @@ variable "storage_size" {
   default = 32
 }
 
-variable "vcores" {
+variable "database_size" {
   type    = number
-  default = 4
+  default = 2
 }
 
 variable "resource_group_name" {
@@ -110,4 +110,9 @@ variable "timezone_id" {
     condition = contains(["UTC","UTC+12","IST"], var.timezone_id)
     error_message = "Invalid Timezone. Choose a valid Azure SQL time zone."
   }
+}
+
+variable "sql_mi" {
+   description = "Azure SQL Managed Instance"
+   type        = string
 }
