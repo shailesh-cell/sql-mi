@@ -52,7 +52,7 @@ variable "sku_name_db" {
   type    = string
   default = "Basic"
   validation {
-    condition     = contains(["GP_S_Gen5_2", "HS_Gen4_1", "BC_Gen5_2", "ElasticPool", "Basic", "S0", "P2", "DW100c", "DS100"], var.sku_name)
+    condition     = contains(["GP_S_Gen5_2", "HS_Gen4_1", "BC_Gen5_2", "ElasticPool", "Basic", "S0", "P2", "DW100c", "DS100"], var.sku_name_db)
     error_message = "Allowed values: GP_S_Gen5_2, HS_Gen4_1, BC_Gen5_2, ElasticPool, Basic, S0, P2, DW100c, DS100 ."
   }
 }
