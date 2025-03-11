@@ -7,3 +7,12 @@ resource "azurerm_mssql_database" "sql_database" {
   sku_name                     = var.sku_name_db
   storage_account_type         = lookup(var.storage_account_type_map, var.environment)
 }
+
+
+long_term_retention_policy {
+
+weekly_retention = var.weekly_retention
+monthly_retention = var.monthly_retention
+yearly_retention = var.yearly_retention
+
+}

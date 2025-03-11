@@ -76,3 +76,34 @@ variable "storage_account_type_map" {
     "prod" = "Geo,Zone,GeoZone"
   }
 }
+
+variable "weekly_retention" {
+  description = "Retention period in ISO 8601 duration format (e.g., PT0S, P1Y, P1M, P1W, P7D)"
+  type        = string
+  default     = "PT0S"
+  validation {
+    condition     = contains(["PT0S", "P1Y", "P1M", "P1W", "P7D"], var.weekly_retention)
+    error_message = "Invalid retention period. Allowed values are PT0S, P1Y, P1M, P1W, P7D."
+  }
+}
+
+variable "monthly_retention" {
+  description = "Retention period in ISO 8601 duration format (e.g., PT0S, P1Y, P1M, P1W, P7D)"
+  type        = string
+  default     = "PT0S"
+  validation {
+    condition     = contains(["PT0S", "P1Y", "P1M", "P4W", "P30D"], var.weekly_retention)
+    error_message = "Invalid retention period. Allowed values are PT0S, P1Y, P1M, P1W, P7D."
+  }
+}
+
+variable "yearly_retention" {
+  description = "Retention period in ISO 8601 duration format (e.g., PT0S, P1Y, P1M, P1W, P7D)"
+  type        = string
+  default     = "PT0S"
+  validation {
+    condition     = contains(["PT0S", "P12M", "P52W", "P365D"], var.weekly_retention)
+    error_message = "Invalid retention period. Allowed values are PT0S, P1Y, P1M, P1W, P7D."
+  }
+}
+
