@@ -12,4 +12,9 @@ resource "azurerm_mssql_database" "sql_database" {
   monthly_retention = var.monthly_retention
   yearly_retention = var.yearly_retention
 }
+
+short_term_retention_policy {
+retention_days = 1
+backup_interval_in_hours = 24
+}
 }
