@@ -17,4 +17,8 @@ short_term_retention_policy {
 retention_days = 1
 backup_interval_in_hours = 24
 }
+
+identity {
+type = "SystemAssigned"
+}
 }
