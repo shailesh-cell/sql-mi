@@ -92,7 +92,7 @@ variable "monthly_retention" {
   type        = string
   default     = "PT0S"
   validation {
-    condition     = contains(["PT0S", "P1Y", "P1M", "P4W", "P30D"], var.weekly_retention)
+    condition     = contains(["PT0S", "P1Y", "P1M", "P4W", "P30D"], var.monthly_retention)
     error_message = "Invalid retention period. Allowed values are PT0S, P1Y, P1M, P4W, P30D."
   }
 }
@@ -102,7 +102,7 @@ variable "yearly_retention" {
   type        = string
   default     = "PT0S"
   validation {
-    condition     = contains(["PT0S", "P12M", "P52W", "P365D"], var.weekly_retention)
+    condition     = contains(["PT0S", "P12M", "P52W", "P365D"], var.yearly_retention)
     error_message = "Invalid retention period. Allowed values are PT0S, P12M, P52W, P365D."
   }
 }
