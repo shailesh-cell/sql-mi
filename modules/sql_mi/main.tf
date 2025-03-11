@@ -12,4 +12,8 @@ resource "azurerm_mssql_managed_instance" "sql_mi" {
   license_type                 = var.license_type
   storage_account_type         = lookup(var.storage_account_type_map, var.environment)
   timezone_id                  = var.timezone_id
+  identity {
+      type = "SystemAssigned"
+}
+
 }
