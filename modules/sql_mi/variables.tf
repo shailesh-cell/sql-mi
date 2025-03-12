@@ -1,9 +1,9 @@
 variable "location" {
   type    = string
-  default = "cin"
+  default = "wus2"
   validation {
-    condition     = contains(["cin", "cus"], var.location)
-    error_message = "Allowed values: cin, cus."
+    condition     = contains(["cin", "cus", "wus2"], var.location)
+    error_message = "Allowed values: cin, cus, wus2."
   }
 }
 
@@ -12,6 +12,7 @@ locals {
   location_map = {
     cin = "centralindia"
     cus = "centralus"
+    wus2 = "West US 2"
   }
 }
 
