@@ -114,10 +114,10 @@ variable "storage_account_type_map" {
 variable "timezone_id" {
   description = "Timezone for Azure SQL Managed Instance"
   type        = string
-  default     = "IST"
+  default     = "Indian Standard Time"
 
   validation {
-    condition = contains(["UTC","UTC+12","IST"], var.timezone_id)
+    condition = contains(["UTC","UTC+12","Indian Standard Time"], var.timezone_id)
     error_message = "Invalid Timezone. Choose a valid Azure SQL time zone."
   }
 }
