@@ -26,10 +26,3 @@ module "sqldatabase" {
   source      = "./modules/sqldatabase"
   mssql_server_id      = module.sql_mi.mssql_server_id
 }
-
-
-
-module "automationaccount" {
-  source      = "./modules/automationaccount"
-  resource_group_name  = module.resource_group.rg_name
-}
