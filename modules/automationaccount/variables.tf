@@ -1,8 +1,8 @@
 variable "location" {
   type    = string
-  default = "cin"
+  default = "sea"
   validation {
-    condition     = contains(["cin", "cus"], var.location)
+    condition     = contains(["cin", "cus", "sea"], var.location)
     error_message = "Allowed values: cin, cus."
   }
 }
@@ -12,12 +12,13 @@ locals {
   location_map = {
     cin = "centralindia"
     cus = "centralus"
+    sea = "southeastasia"
   }
 }
 
 # Use the full region name in resource definitions
 output "full_location" {
-  value = lookup(local.location_map, var.location, "centralindia")
+  value = lookup(local.location_map, var.location, "southeastasia")
 }
 
 variable "environment" {
