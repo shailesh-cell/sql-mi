@@ -60,7 +60,7 @@ variable "license_type" {
 # SQL Managed Instance Module (variables.tf)
 variable "sku_name" {
   type    = string
-  default = "BC_Gen4"
+  default = "GP_Gen5"
   validation {
     condition     = contains(["BC_Gen4", "BC_Gen5", "BC_Gen8IH", "BC_Gen8IM", "GP_Gen4", "GP_Gen5", "GP_Gen8IH", "GP_Gen8IM"], var.sku_name)
     error_message = "Allowed values: BC_Gen4, BC_Gen5, BC_Gen8IH, BC_Gen8IM, GP_Gen4, GP_Gen5, GP_Gen8IH, GP_Gen8IM."
