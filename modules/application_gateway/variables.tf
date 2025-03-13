@@ -39,15 +39,6 @@ variable "product" {
   }
 }
 
-variable "vnet_address_space" {
-  type    = string
-  default = "10.1.0.0/16"
-}
-
-variable "subnet_address_space" {
-  type    = string
-  default = "10.1.1.0/24"
-}
 
 variable "resource_group_name" {
   type        = string
@@ -62,4 +53,13 @@ variable "vnet_name" {
 variable "subnet_name" {
   type        = string
   description = "Name of the Virtual Network"
+}
+
+variable "allocation_method" {
+  type    = string
+  default = "Dynamic"
+  validation {
+    condition     = contains(["Static", "Dynamic"], var.allocation_method)
+    error_message = "Allowed values: Static, Dynamic."
+  }
 }

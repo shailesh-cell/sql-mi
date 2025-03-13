@@ -72,13 +72,55 @@ variable "subnet_id" {
   type        = string
 }
 
-variable "allocation_method" {
+variable "admin_username" {
   type    = string
-  default = "Dynamic"
+  default = "sql_admin"
+}
+
+variable "admin_password" {
+  type    = string
+  default = "sql_admin@123"
+}
+
+
+variable "sku_name" {
+  type    = string
+  default = "GP_Gen5"
+}
+
+variable "storage_size" {
+  type    = string
+  default = 32
+}
+
+variable "vcores" {
+  type    = string
+  default = 4
+}
+
+
+variable "environment" {
+  type    = string
+  default = "dev"
   validation {
-    condition     = contains(["Static", "Dynamic"], var.allocation_method)
-    error_message = "Allowed values: Static, Dynamic."
+    condition     = contains(["dev", "uat", "prod"], var.environment)
+    error_message = "Allowed values: dev, uat, prod."
   }
 }
+
+variable "storage_account_type_map" {
+  type = map(string)
+  default = {
+    dev  = "LRS"
+    uat  = "LRS"
+    prod = "GRS"
+  }
+}
+
+variable "storage_account_type" {
+  type    = string
+  default = "LRS"
+}
+
 
 
