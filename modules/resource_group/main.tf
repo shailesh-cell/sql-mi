@@ -6,6 +6,6 @@ module "global_variables" {
 
 
 resource "azurerm_resource_group" "rg" {
-  name     = "${var.product}-${var.environment}-${var.location}-rg"
+  name     = "${module.global_variables.product}-${module.global_variables.environment}-${module.global_variables.location}-rg"
   location = lookup(local.location_map, var.location, "centralindia")
 }

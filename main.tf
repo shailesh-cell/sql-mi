@@ -1,5 +1,5 @@
 module "global_variables" {
-  source = "./modules/base-infrastructure/global-variable"
+  source = "./modules/base-infrastructure/global-variables"
 }
 
 module "resource_group" {
