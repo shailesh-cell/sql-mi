@@ -30,6 +30,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: sql-mi  # 🔹 Added correct path
         env:
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -38,8 +39,8 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
+        working-directory: sql-mi  # 🔹 Added correct path
         env:
-          #TF_LOG: DEBUG
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
           ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
@@ -49,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: terraform-plan
-          path: tfplan
+          path: sql-mi/tfplan  # 🔹 Ensure correct path
 
   terraform-apply:
     needs: terraform-plan
@@ -74,6 +75,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: sql-mi  # 🔹 Added correct path
         env:
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -82,16 +84,7 @@ jobs:
 
       - name: Terraform Plan (Re-run Before Apply)
         run: terraform plan -out=tfplan
+        working-directory: sql-mi  # 🔹 Added correct path
         env:
           ARM_USE_OIDC: true
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan
-        env:
-          ARM_USE_OIDC: true
-          ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-          ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-          ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+     
