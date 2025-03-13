@@ -30,7 +30,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./sql-mi  # 🔹 FIXED PATH
+        working-directory: .  # 🔹 FIXED PATH
         env:
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -39,7 +39,7 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-        working-directory: ./sql-mi  # 🔹 FIXED PATH
+        working-directory: .  # 🔹 FIXED PATH
         env:
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -75,7 +75,7 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        working-directory: ./sql-mi  # 🔹 FIXED PATH
+        working-directory: .  # 🔹 FIXED PATH
         env:
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -84,7 +84,7 @@ jobs:
 
       - name: Terraform Plan (Re-run Before Apply)
         run: terraform plan -out=tfplan
-        working-directory: ./sql-mi  # 🔹 FIXED PATH
+        working-directory: .  # 🔹 FIXED PATH
         env:
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
@@ -93,7 +93,7 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
-        working-directory: ./sql-mi  # 🔹 FIXED PATH
+        working-directory: .  # 🔹 FIXED PATH
         env:
           ARM_USE_OIDC: true
           ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
