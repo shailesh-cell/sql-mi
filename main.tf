@@ -15,21 +15,9 @@ module "subnet" {
   resource_group_name  = module.resource_group.rg_name
 }
 
-module "sql_mi" {
-  source      = "./modules/sql_mi"
-  vnet_name   = module.vnet.vnet_name
-  subnet_id = module.subnet.subnet_id
-  resource_group_name  = module.resource_group.rg_name
-}
-
-module "sqldatabase" {
-  source      = "./modules/sqldatabase"
-  mssql_server_id      = module.sql_mi.mssql_server_id
-}
-
 module "applicationgateway" {
   source      = "./modules/application_gateway"
   vnet_name   = module.vnet.vnet_name
-  subnet_id = module.subnet.subnet_id
+  subnet_id = module.subnet.subnet1_id
   resource_group_name  = module.resource_group.rg_name
 }

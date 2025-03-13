@@ -49,6 +49,11 @@ variable "subnet_address_space" {
   default = "10.1.1.0/24"
 }
 
+variable "subnet_address_space_1" {
+  type    = string
+  default = "10.2.1.0/24"
+}
+
 variable "resource_group_name" {
   type        = string
   description = "Name of the resource group"
