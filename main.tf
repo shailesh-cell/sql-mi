@@ -27,6 +27,8 @@ module "sqldatabase" {
   mssql_server_id      = module.sql_mi.mssql_server_id
 }
 
-module "sapplicationgateway" {
+module "applicationgateway" {
   source      = "./modules/application_gateway"
+  vnet_name   = module.vnet.vnet_name
+  subnet_name = module.subnet.subnet_name
 }
