@@ -50,7 +50,7 @@ variable "vnet_name" {
   description = "Name of the Virtual Network"
 }
 
-variable "subnet_name" {
+variable "subnet_id" {
   type        = string
   description = "Name of the Virtual Network"
 }
