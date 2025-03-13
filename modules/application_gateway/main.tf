@@ -26,7 +26,6 @@ resource "azurerm_application_gateway" "agw" {
     name     = "Standard_v2"
     tier     = "Standard_v2"
     capacity = 2
-   depends_on = [azurerm_public_ip.publicip]
   }
 
   gateway_ip_configuration {
