@@ -46,7 +46,7 @@ variable "vnet_address_space" {
 
 variable "subnet_address_space" {
   type    = string
-  default = "10.1.1.8/26"
+  default = "10.1.1.64/26"
 }
 
 variable "subnet_address_space_1" {
