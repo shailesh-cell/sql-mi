@@ -46,12 +46,12 @@ variable "vnet_address_space" {
 
 variable "subnet_address_space" {
   type    = string
-  default = "10.1.1.0/24"
+  default = "10.1.1.8/26"
 }
 
 variable "subnet_address_space_1" {
   type    = string
-  default = "10.2.1.0/24"
+  default = "10.1.1.0/29"
 }
 
 variable "resource_group_name" {

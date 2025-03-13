@@ -18,6 +18,6 @@ module "subnet" {
 module "applicationgateway" {
   source      = "./modules/application_gateway"
   vnet_name   = module.vnet.vnet_name
-  subnet_id = module.subnet.subnet1_id
+  subnet1_id = module.subnet.subnet1_id
   resource_group_name  = module.resource_group.rg_name
 }
