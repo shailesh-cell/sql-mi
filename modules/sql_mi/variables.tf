@@ -79,7 +79,7 @@ variable "admin_username" {
 
 variable "admin_password" {
   type    = string
-  default = "P_e@ssq!_@eate_admin_321"
+  default = "S3cur3P@_s_W0rd!"
 }
 
 
