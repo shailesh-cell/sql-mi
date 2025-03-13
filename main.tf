@@ -1,7 +1,3 @@
-module "global_variables" {
-  source = "./modules/base-infrastructure/global-variables"
-}
-
 module "resource_group" {
   source      = "./modules/resource_group"
 }
