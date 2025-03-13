@@ -79,7 +79,7 @@ variable "admin_username" {
 
 variable "admin_password" {
   type    = string
-  default = "pleasesql_create_admin_321"
+  default = "P_e@ssq!_@eate_admin_321"
 }
 
 
