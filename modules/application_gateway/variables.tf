@@ -49,15 +49,6 @@ variable "subnet_address_space" {
   default = "10.1.1.0/24"
 }
 
-variable "license_type" {
-  type    = string
-  default = "LicenseIncluded"
-  validation {
-    condition     = contains(["LicenseIncluded", "BasePrice"], var.license_type)
-    error_message = "Allowed values: LicenseIncluded, BasePrice."
-  }
-}
-
 variable "resource_group_name" {
   type        = string
   description = "Name of the resource group"
@@ -68,17 +59,7 @@ variable "vnet_name" {
   description = "Name of the Virtual Network"
 }
 
-variable "subnet_id" {
+variable "subnet_name" {
   type        = string
+  description = "Name of the Virtual Network"
 }
-
-variable "allocation_method" {
-  type    = string
-  default = "Dynamic"
-  validation {
-    condition     = contains(["Static", "Dynamic"], var.allocation_method)
-    error_message = "Allowed values: Static, Dynamic."
-  }
-}
-
-

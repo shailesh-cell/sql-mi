@@ -26,3 +26,7 @@ module "sqldatabase" {
   source      = "./modules/sqldatabase"
   mssql_server_id      = module.sql_mi.mssql_server_id
 }
+
+module "sapplicationgateway" {
+  source      = "./modules/application_gateway"
+}
