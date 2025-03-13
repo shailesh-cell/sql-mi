@@ -98,16 +98,6 @@ variable "vcores" {
   default = 4
 }
 
-
-variable "environment" {
-  type    = string
-  default = "dev"
-  validation {
-    condition     = contains(["dev", "uat", "prod"], var.environment)
-    error_message = "Allowed values: dev, uat, prod."
-  }
-}
-
 variable "storage_account_type_map" {
   type = map(string)
   default = {
@@ -120,6 +110,11 @@ variable "storage_account_type_map" {
 variable "storage_account_type" {
   type    = string
   default = "LRS"
+}
+
+variable "timezone_id" {
+  type   = string
+  default = "India Standard Time"
 }
 
 
