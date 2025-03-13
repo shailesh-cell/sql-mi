@@ -28,6 +28,11 @@ jobs:
         with:
           terraform_version: latest
 
+      - name: Debug Directory Structure
+        run: ls -R
+        working-directory: .
+      
+           
       - name: Terraform Init
         run: terraform init
         working-directory: .  # 🔹 FIXED PATH
