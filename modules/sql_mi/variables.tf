@@ -79,7 +79,7 @@ variable "admin_username" {
 
 variable "admin_password" {
   type    = string
-  default = "sql_admin@123"
+  default = "pleasesql_create_admin_321"
 }
 
 

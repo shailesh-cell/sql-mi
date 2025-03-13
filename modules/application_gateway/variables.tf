@@ -57,7 +57,7 @@ variable "subnet_id" {
 
 variable "allocation_method" {
   type    = string
-  default = "Dynamic"
+  default = "Static"
   validation {
     condition     = contains(["Static", "Dynamic"], var.allocation_method)
     error_message = "Allowed values: Static, Dynamic."
