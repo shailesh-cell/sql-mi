@@ -4,10 +4,6 @@ module "global_variables" {
 
 module "resource_group" {
   source      = "./modules/resource_group"
-  product     = module.global_variables.product
-  environment = module.global_variables.environment
-  location    = module.global_variables.location
-  location_map = module.global_variables.location_map
 }
 
 #module "vnet" {
