@@ -1,7 +1,7 @@
 # Resource Group Module (main.tf)
 
 module "global_variables" {
-  source = "./modules/global-variables"
+  source = "../modules/global-variables"
 }
 
 resource "azurerm_resource_group" "rg" {
