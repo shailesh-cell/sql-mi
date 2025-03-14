@@ -1,4 +1,4 @@
-module "global_variables" {
+module "global-variables" {
   source = "./modules/global-variables"
 }
 
