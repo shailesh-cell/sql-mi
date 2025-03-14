@@ -3,7 +3,6 @@ module "global_variables" {
 }
 
 
-
 module "resource_group" {
   source      = "./modules/resource_group"
 }
