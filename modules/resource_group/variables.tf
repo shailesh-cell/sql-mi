@@ -27,8 +27,3 @@ locals {
 output "full_location" {
   value = lookup(local.location_map, var.location, "centralindia")
 }
-
-variable "tags" {
-  description = "A map of tags to add to the resource group"
-  type        = map(string)
-}

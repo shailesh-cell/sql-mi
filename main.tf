@@ -6,7 +6,6 @@ module "global-variables" {
 module "resource_group" {
   source      = "./modules/resource_group"
   resource_group_name = module.resource_group.rg_name
-  tags                = module.global-variables.tags
 }
 
 #module "vnet" {
