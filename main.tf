@@ -1,5 +1,5 @@
 module "global_variables" {
-  source = "../modules/global-variables"
+  source = "./modules/global-variables"
 }
 
 
