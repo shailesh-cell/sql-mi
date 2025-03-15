@@ -2,6 +2,10 @@ module "resource_group" {
   source      = "./modules/resource_group"
 }
 
+module "stream_analytic_job" {
+  source      = "./modules/stream-analytic-job"
+}
+
 #module "vnet" {
 #  source      = "./modules/vnet"
 #  vnet_name   = module.vnet.vnet_name
