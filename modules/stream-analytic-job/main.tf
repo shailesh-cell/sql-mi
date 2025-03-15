@@ -19,6 +19,4 @@ resource "azurerm_stream_analytics_job" "asaj" {
     FROM [YourInputAlias]
 QUERY
 
-  # Set output start mode to LastOutputEventTime
-  output_start_mode = "LastOutputEventTime"
 }
