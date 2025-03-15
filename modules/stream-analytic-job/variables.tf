@@ -47,3 +47,7 @@ variable "tags" {
     Project     = "TerraformProject"
   }
 }
+
+variable "resource_group_name" {
+  type = string
+}
