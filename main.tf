@@ -4,6 +4,7 @@ module "resource_group" {
 
 module "stream_analytic_job" {
   source      = "./modules/stream-analytic-job"
+  resource_group_name  = module.resource_group.rg_name
 }
 
 #module "vnet" {
