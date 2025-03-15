@@ -13,4 +13,11 @@ resource "azurerm_stream_analytics_job" "asaj" {
 
   tags = var.tags
 
+    transformation_query = <<QUERY
+    SELECT *
+    INTO [YourOutputAlias]
+    FROM [YourInputAlias]
+QUERY
+
 }
+
