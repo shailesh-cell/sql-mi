@@ -1,5 +1,3 @@
-# Stream Analytic Job (main.tf)
-
 resource "azurerm_stream_analytics_job" "asaj" {
   name                                     = "${var.product}-${var.environment}-${var.location}-rg"
   resource_group_name                      = var.resource_group_name
@@ -21,4 +19,6 @@ resource "azurerm_stream_analytics_job" "asaj" {
     FROM [YourInputAlias]
 QUERY
 
+  # Set output start mode to LastOutputEventTime
+  output_start_mode = "LastOutputEventTime"
 }
