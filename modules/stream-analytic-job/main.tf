@@ -8,7 +8,7 @@ resource "azurerm_stream_analytics_job" "asaj" {
   events_out_of_order_max_delay_in_seconds = 5
   events_out_of_order_policy               = "Adjust"
   output_error_policy                      = "Drop"
-  streaming_units                          = 3
+  #streaming_units                          = 3
   sku_name                                 = "StandardV2"
 
   tags = var.tags
